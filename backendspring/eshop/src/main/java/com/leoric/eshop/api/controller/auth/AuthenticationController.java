@@ -4,15 +4,14 @@ import com.leoric.eshop.api.model.LoginBody;
 import com.leoric.eshop.api.model.LoginResponse;
 import com.leoric.eshop.api.model.RegistrationBody;
 import com.leoric.eshop.exception.UserAlreadyExistsException;
+import com.leoric.eshop.models.LocalUser;
 import com.leoric.eshop.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -44,5 +43,9 @@ public class AuthenticationController {
       response.setJwt(jwt);
       return ResponseEntity.ok(response);
     }
+  }
+  @GetMapping("/me")
+  public LocalUser getLoggedInUserProfile(@AuthenticationPrincipal LocalUser user){
+    return user;
   }
 }

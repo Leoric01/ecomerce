@@ -25,6 +25,10 @@ public class RegistrationBody {
   @NotNull
   @NotBlank(message = "last name is required")
   private String lastName;
+  
+  @NotNull
+  @NotBlank
+  private String roles;
 
   public RegistrationBody() {}
 
@@ -67,4 +71,12 @@ public class RegistrationBody {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
+public String getRoles() {
+  return roles;
+}
+
+public void setRoles(String roles) {
+  this.roles = roles;
+}
 }

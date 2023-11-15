@@ -38,6 +38,7 @@ public class UserServiceImpl implements UserService {
     user.setLastName(registrationBody.getLastName());
     user.setUsername(registrationBody.getUsername());
     user.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
+    user.setRoles(registrationBody.getRoles());
     return userRepository.save(user);
   }
 
