@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.leoric01</groupId>
-    <artifactId>Hogwarts</artifactId>
+    <artifactId>Eshop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Hogwarts</name>
     <description>Hogwarts</description>
